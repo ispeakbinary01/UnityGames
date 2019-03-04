@@ -107,6 +107,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
+  shotCounter: 0
+  mintimeShots: 0.2
+  maxTimeShots: 3
+  enemyLaser: {fileID: 5556995028678983002, guid: ff237b558cfc45940ad8dc613e8768bf,
+    type: 3}
+  enemyLaserSpeed: 10
 --- !u!58 &6184268772974090540
 CircleCollider2D:
   m_ObjectHideFlags: 0
