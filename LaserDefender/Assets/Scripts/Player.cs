@@ -7,8 +7,11 @@ public class Player : MonoBehaviour {
 
 
     // Config Params
+    [Header("Player")]
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
+    [SerializeField] float health = 200f;
+    [Header("Projectile")]
     [SerializeField] GameObject playerLaser;
     [SerializeField] float laserSpeed = 1;
     [SerializeField] float firingPeriod = 0.1f;
@@ -30,6 +33,22 @@ public class Player : MonoBehaviour {
     void Update() {
         Move();
         Fire();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        damageDealer damageDealer = other.gameObject.GetComponent<damageDealer>();
+        if (!damageDealer) {
+            return;
+        }
+        healthProccess(damageDealer);
+    }
+
+    private void healthProccess(damageDealer damageDealer) {
+        health -= damageDealer.getDamage();
+        damageDealer.hit();
+        if (health <= 0) {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -68,4 +87,6 @@ public class Player : MonoBehaviour {
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
     }
+
+    
 }

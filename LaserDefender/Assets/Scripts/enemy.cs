@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class enemy : MonoBehaviour {
-
     [SerializeField] float health = 100f;
     [SerializeField] float shotCounter;
     [SerializeField] float mintimeShots = 0.2f;
@@ -39,11 +38,15 @@ public class enemy : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
         damageDealer damageDealer = other.gameObject.GetComponent<damageDealer>();
+        if (!damageDealer) {
+            return;
+        }
         healthProccess(damageDealer);
     }
 
     private void healthProccess(damageDealer damageDealer) {
         health -= damageDealer.getDamage();
+        damageDealer.hit();
         if (health <= 0) {
             Destroy(gameObject);
         }
