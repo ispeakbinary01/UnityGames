@@ -113,6 +113,11 @@ MonoBehaviour:
   enemyLaser: {fileID: 5556995028678983002, guid: ff237b558cfc45940ad8dc613e8768bf,
     type: 3}
   enemyLaserSpeed: 10
+  deathVFX: {fileID: 2546488497031135002, guid: b9edd7f4275c61044854ec2bc93a67ec,
+    type: 3}
+  deathTimer: 1
+  deathAudio: {fileID: 8300000, guid: 3f46c09fbbd509d4993fad1fc9e818d7, type: 3}
+  laserAudio: {fileID: 8300000, guid: 7989e784735d73743bfb2231f28e780f, type: 3}
 --- !u!58 &6184268772974090540
 CircleCollider2D:
   m_ObjectHideFlags: 0

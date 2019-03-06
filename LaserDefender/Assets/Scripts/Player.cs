@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
     [SerializeField] GameObject playerLaser;
     [SerializeField] float laserSpeed = 1;
     [SerializeField] float firingPeriod = 0.1f;
+    [SerializeField] AudioClip pDeathAudio;
 
     Coroutine firingCoroutine;
 
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour {
         health -= damageDealer.getDamage();
         damageDealer.hit();
         if (health <= 0) {
+            AudioSource.PlayClipAtPoint(pDeathAudio, Camera.main.transform.position);
             Destroy(gameObject);
         }
     }

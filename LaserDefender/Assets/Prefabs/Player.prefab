@@ -100,6 +100,7 @@ MonoBehaviour:
     type: 3}
   laserSpeed: 50
   firingPeriod: 0.1
+  pDeathAudio: {fileID: 8300000, guid: 746e74999eab5d942857a99f262d09aa, type: 3}
 --- !u!60 &5556537830047778726
 PolygonCollider2D:
   m_ObjectHideFlags: 0
