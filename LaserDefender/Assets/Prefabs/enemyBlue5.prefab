@@ -107,10 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
-  shotCounter: 0
+  scoreValue: 200
   mintimeShots: 0.2
   maxTimeShots: 3
-  enemyLaser: {fileID: 5556995028678983002, guid: ff237b558cfc45940ad8dc613e8768bf,
+  enemyLaser: {fileID: 1718501622132563904, guid: e2838ea8199cef24c8ed1b6cc37f8e80,
     type: 3}
   enemyLaserSpeed: 10
   deathVFX: {fileID: 2546488497031135002, guid: b9edd7f4275c61044854ec2bc93a67ec,
@@ -118,6 +118,7 @@ MonoBehaviour:
   deathTimer: 1
   deathAudio: {fileID: 8300000, guid: 3f46c09fbbd509d4993fad1fc9e818d7, type: 3}
   laserAudio: {fileID: 8300000, guid: 7989e784735d73743bfb2231f28e780f, type: 3}
+  deathVolume: 0.7
 --- !u!58 &6184268772974090540
 CircleCollider2D:
   m_ObjectHideFlags: 0

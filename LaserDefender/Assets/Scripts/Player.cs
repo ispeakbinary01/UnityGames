@@ -11,11 +11,12 @@ public class Player : MonoBehaviour {
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
     [SerializeField] float health = 200f;
+    [SerializeField] AudioClip pDeathAudio;
     [Header("Projectile")]
     [SerializeField] GameObject playerLaser;
     [SerializeField] float laserSpeed = 1;
     [SerializeField] float firingPeriod = 0.1f;
-    [SerializeField] AudioClip pDeathAudio;
+    
 
     Coroutine firingCoroutine;
 
@@ -36,6 +37,9 @@ public class Player : MonoBehaviour {
         Fire();
     }
 
+    public float GetHealth() {
+        return health;
+    }
     private void OnTriggerEnter2D(Collider2D other) {
         damageDealer damageDealer = other.gameObject.GetComponent<damageDealer>();
         if (!damageDealer) {
